@@ -1,0 +1,2416 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', 'Tajawal', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+    direction: rtl;
+}
+
+[dir="rtl"] .header-content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .logo {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .header-actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-container {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .section-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .section-actions {
+    order: -1;
+}
+
+[dir="rtl"] .restaurant-card-header {
+    text-align: center;
+}
+
+[dir="rtl"] .restaurant-title-section {
+    text-align: center;
+}
+
+[dir="rtl"] .info-item-enhanced {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .info-content {
+    text-align: right;
+}
+
+[dir="rtl"] .contact-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .contact-details {
+    text-align: right;
+}
+
+[dir="rtl"] .zone-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zone-details {
+    text-align: right;
+}
+
+[dir="rtl"] .zone-price-section,
+[dir="rtl"] .zone-time-section {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .quick-actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .modal-footer {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .form-group {
+    text-align: right;
+}
+
+[dir="rtl"] .form-group input,
+[dir="rtl"] .form-group select {
+    text-align: right;
+}
+
+[dir="rtl"] .zone-input-group {
+    direction: rtl;
+}
+
+[dir="rtl"] .zone-input-group input {
+    text-align: right;
+}
+
+[dir="rtl"] .search-input-container {
+    direction: rtl;
+}
+
+[dir="rtl"] .search-input-container input {
+    text-align: right;
+    padding: 1rem 3rem 1rem 1rem;
+}
+
+[dir="rtl"] .search-input-container i {
+    right: 1rem;
+    left: auto;
+}
+
+[dir="rtl"] .search-placeholder,
+[dir="rtl"] .no-results {
+    text-align: center;
+}
+
+[dir="rtl"] .setting-item {
+    text-align: right;
+}
+
+[dir="rtl"] .setting-item input[type="text"] {
+    text-align: right;
+}
+
+[dir="rtl"] .setting-item label {
+    text-align: right;
+}
+
+[dir="rtl"] .toast-container {
+    left: 1rem;
+    right: auto;
+}
+
+[dir="rtl"] .toast {
+    text-align: right;
+}
+
+[dir="rtl"] .toast-content {
+    flex-direction: row-reverse;
+}
+
+/* Additional RTL Improvements */
+[dir="rtl"] .btn {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-btn {
+    flex-direction: column;
+}
+
+[dir="rtl"] .card-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .result-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .result-details {
+    text-align: right;
+}
+
+[dir="rtl"] .delivery-time,
+[dir="rtl"] .contact-info {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hours-display {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zones-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .zone-preview-card {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .action-btn {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .remove-zone-btn {
+    order: -1;
+}
+
+[dir="rtl"] .modal-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .modal-close {
+    order: -1;
+}
+
+/* RTL Typography */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] div {
+    text-align: right;
+}
+
+[dir="rtl"] input,
+[dir="rtl"] select,
+[dir="rtl"] textarea {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .restaurant-name-modal {
+    text-align: center;
+}
+
+[dir="rtl"] .restaurant-header-modal {
+    text-align: center;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+.logo h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.9);
+    color: #4a5568;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-1px);
+}
+
+/* Navigation Styles */
+.main-nav {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.75rem 0.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.nav-btn i {
+    font-size: 1.25rem;
+}
+
+.nav-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: scale(1.05);
+}
+
+.nav-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section-header h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+.section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Enhanced Restaurant Grid */
+.restaurants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.restaurant-card {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.restaurant-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.restaurant-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced Restaurant Card Header */
+.restaurant-card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5rem;
+    color: white;
+    position: relative;
+}
+
+.restaurant-title-section {
+    margin-bottom: 1rem;
+}
+
+.restaurant-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.restaurant-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.restaurant-status i {
+    font-size: 1rem;
+}
+
+.cuisine-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* Enhanced Restaurant Info */
+.restaurant-info-enhanced {
+    padding: 1.5rem;
+    background: #f8fafc;
+}
+
+.info-item-enhanced {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.info-item-enhanced:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.info-item-enhanced:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.info-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.info-value {
+    font-size: 0.95rem;
+    color: #2d3748;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Enhanced Delivery Zones */
+.delivery-zones-enhanced {
+    padding: 1.5rem;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+}
+
+.zones-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.zones-header i {
+    color: #667eea;
+    font-size: 1.25rem;
+}
+
+.zones-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+.zones-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.zone-preview-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+    border: 2px solid #feb2b2;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.zone-preview-card:hover {
+    border-color: #fc8181;
+    transform: translateX(4px);
+}
+
+.zone-preview-card .zone-name {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.9rem;
+}
+
+.zone-preview-card .zone-price {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 0.9rem;
+}
+
+.more-zones {
+    text-align: center;
+    padding: 0.5rem;
+    background: #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.view-details-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.view-details-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.view-details-btn i {
+    font-size: 1.1rem;
+}
+
+/* Search Section */
+.search-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.search-input-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.search-input-container i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+}
+
+.search-input-container input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.search-input-container input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-results {
+    display: grid;
+    gap: 1rem;
+}
+
+.search-result-item {
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem;
+    transition: all 0.2s ease;
+}
+
+.search-result-item:hover {
+    background: #edf2f7;
+    border-color: #667eea;
+}
+
+/* Settings Section */
+.settings-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.setting-group {
+    margin-bottom: 2rem;
+}
+
+.setting-group h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.setting-item {
+    margin-bottom: 1rem;
+}
+
+.setting-item label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}
+
+.setting-item input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.setting-item input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.setting-item input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: #a0aec0;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #f7fafc;
+    color: #4a5568;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    justify-content: flex-end;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-overlay.active {
+    display: flex;
+}
+
+.loading-spinner {
+    text-align: center;
+    color: white;
+}
+
+.loading-spinner i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.loading-spinner p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.toast {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid #667eea;
+    min-width: 300px;
+    animation: slideIn 0.3s ease;
+}
+
+.toast.success {
+    border-left-color: #48bb78;
+}
+
+.toast.error {
+    border-left-color: #f56565;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    [dir="rtl"] .header-content {
+        flex-direction: column;
+    }
+    
+    .logo h1 {
+        font-size: 1.125rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    [dir="rtl"] .section-header {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .restaurants-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .restaurant-card-header {
+        padding: 1rem;
+    }
+    
+    .restaurant-name {
+        font-size: 1.25rem;
+    }
+    
+    .restaurant-info-enhanced {
+        padding: 1rem;
+    }
+    
+    .info-item-enhanced {
+        padding: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .delivery-zones-enhanced {
+        padding: 1rem;
+    }
+    
+    .zone-preview-card {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .card-footer {
+        padding: 1rem;
+    }
+    
+    .view-details-btn {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .nav-container {
+        padding: 0 0.5rem;
+    }
+    
+    .nav-btn {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.7rem;
+    }
+    
+    .nav-btn i {
+        font-size: 1rem;
+    }
+    
+    .search-container,
+    .settings-container {
+        padding: 1rem;
+    }
+    
+    .modal-content {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 1rem;
+    }
+    
+    .toast-container {
+        left: 1rem;
+        right: 1rem;
+    }
+    
+    [dir="rtl"] .toast-container {
+        left: 1rem;
+        right: 1rem;
+    }
+    
+    .toast {
+        min-width: auto;
+    }
+    
+    /* RTL Mobile Improvements */
+    [dir="rtl"] .nav-container {
+        flex-direction: row;
+    }
+    
+    [dir="rtl"] .nav-btn {
+        flex-direction: column;
+    }
+    
+    [dir="rtl"] .restaurant-card-header {
+        text-align: center;
+    }
+    
+    [dir="rtl"] .info-item-enhanced {
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .contact-item {
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .zone-header {
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .zone-preview-card {
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .quick-actions {
+        flex-direction: column;
+    }
+    
+    [dir="rtl"] .action-btn {
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .modal-footer {
+        flex-direction: column;
+    }
+    
+    [dir="rtl"] .zone-input-group {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    [dir="rtl"] .remove-zone-btn {
+        justify-self: start;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    [dir="rtl"] .btn {
+        flex-direction: row-reverse;
+    }
+    
+    .restaurant-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    [dir="rtl"] .restaurant-header {
+        align-items: flex-end;
+    }
+    
+    .zone-tags {
+        gap: 0.25rem;
+    }
+    
+    .zone-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+    }
+    
+    /* RTL Small Screen Improvements */
+    [dir="rtl"] .header-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    [dir="rtl"] .logo {
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .nav-btn {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.25rem;
+    }
+    
+    [dir="rtl"] .nav-btn i {
+        font-size: 1rem;
+    }
+    
+    [dir="rtl"] .restaurant-name {
+        font-size: 1.25rem;
+    }
+    
+    [dir="rtl"] .info-item-enhanced {
+        padding: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    [dir="rtl"] .info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    [dir="rtl"] .zone-preview-card {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    [dir="rtl"] .view-details-btn {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    /* RTL Mobile Modal Improvements */
+    [dir="rtl"] .modal-content {
+        margin: 1rem;
+        direction: rtl;
+    }
+    
+    [dir="rtl"] .modal-header {
+        flex-direction: row-reverse;
+        padding: 1rem;
+    }
+    
+    [dir="rtl"] .modal-header h3 {
+        text-align: right;
+        font-size: 1.125rem;
+    }
+    
+    [dir="rtl"] .modal-body {
+        padding: 1rem;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .modal-footer {
+        padding: 1rem;
+        flex-direction: column;
+    }
+    
+    [dir="rtl"] .modal-footer .btn {
+        flex-direction: row-reverse;
+        margin-bottom: 0.5rem;
+    }
+    
+    [dir="rtl"] .restaurant-header-modal {
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    [dir="rtl"] .restaurant-name-modal {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    [dir="rtl"] .card-content {
+        padding: 1rem;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .delivery-zones-grid {
+        grid-template-columns: 1fr;
+        direction: rtl;
+    }
+    
+    [dir="rtl"] .delivery-zone-card {
+        padding: 1rem;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .zone-header {
+        gap: 0.75rem;
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .zone-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        order: 1;
+    }
+    
+    [dir="rtl"] .zone-name {
+        font-size: 1.1rem;
+        order: 0;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .quick-actions {
+        flex-direction: column;
+    }
+    
+    [dir="rtl"] .action-btn {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9rem;
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .contact-item {
+        padding: 0.75rem 0;
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        order: 1;
+    }
+    
+    [dir="rtl"] .contact-details {
+        order: 0;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .hours-display {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .hours-display span {
+        text-align: right;
+    }
+    
+    /* RTL Small Screen Modal Improvements */
+    [dir="rtl"] .modal-content {
+        margin: 0.5rem;
+        max-height: calc(100vh - 1rem);
+    }
+    
+    [dir="rtl"] .modal-header {
+        padding: 0.75rem;
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .modal-header h3 {
+        font-size: 1rem;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .modal-body {
+        padding: 0.75rem;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .modal-footer {
+        padding: 0.75rem;
+        flex-direction: column;
+    }
+    
+    [dir="rtl"] .modal-footer .btn {
+        flex-direction: row-reverse;
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    [dir="rtl"] .restaurant-header-modal {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    [dir="rtl"] .restaurant-name-modal {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+    
+    [dir="rtl"] .card-content {
+        padding: 0.75rem;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .delivery-zone-card {
+        padding: 0.75rem;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .zone-header {
+        gap: 0.5rem;
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .zone-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+        order: 1;
+    }
+    
+    [dir="rtl"] .zone-name {
+        font-size: 1rem;
+        order: 0;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .zone-price-section,
+    [dir="rtl"] .zone-time-section {
+        flex-direction: row-reverse;
+        padding: 0.5rem;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .quick-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    [dir="rtl"] .action-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .contact-item {
+        padding: 0.5rem 0;
+        flex-direction: row-reverse;
+    }
+    
+    [dir="rtl"] .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        order: 1;
+    }
+    
+    [dir="rtl"] .contact-details {
+        order: 0;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .contact-label {
+        font-size: 0.8rem;
+    }
+    
+    [dir="rtl"] .contact-value {
+        font-size: 0.9rem;
+    }
+    
+    [dir="rtl"] .hours-display {
+        flex-direction: row-reverse;
+        padding: 0.75rem;
+        text-align: right;
+    }
+    
+    [dir="rtl"] .hours-display i {
+        font-size: 1.25rem;
+    }
+    
+    [dir="rtl"] .hours-display span {
+        font-size: 1rem;
+        text-align: right;
+    }
+}
+
+/* Compact View */
+.compact-view .restaurant-card {
+    padding: 1rem;
+}
+
+.compact-view .restaurant-name {
+    font-size: 1rem;
+}
+
+.compact-view .info-item {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.compact-view .delivery-zones h4 {
+    font-size: 0.8rem;
+}
+
+.compact-view .zone-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+}
+
+/* RTL Compact View */
+[dir="rtl"] .compact-view .restaurant-card-header {
+    text-align: center;
+}
+
+[dir="rtl"] .compact-view .info-item-enhanced {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .compact-view .info-content {
+    text-align: right;
+}
+
+[dir="rtl"] .compact-view .zone-preview-card {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .compact-view .view-details-btn {
+    flex-direction: row-reverse;
+}
+
+/* RTL Compact Modal View */
+[dir="rtl"] .compact-view .modal-content {
+    direction: rtl;
+}
+
+[dir="rtl"] .compact-view .modal-header {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .compact-view .modal-header h3 {
+    text-align: right;
+    font-size: 1rem;
+}
+
+[dir="rtl"] .compact-view .modal-body {
+    text-align: right;
+}
+
+[dir="rtl"] .compact-view .modal-footer {
+    flex-direction: column;
+}
+
+[dir="rtl"] .compact-view .modal-footer .btn {
+    flex-direction: row-reverse;
+    margin-bottom: 0.5rem;
+}
+
+[dir="rtl"] .compact-view .restaurant-header-modal {
+    text-align: center;
+}
+
+[dir="rtl"] .compact-view .restaurant-name-modal {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+[dir="rtl"] .compact-view .card-content {
+    text-align: right;
+}
+
+[dir="rtl"] .compact-view .contact-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .compact-view .contact-details {
+    text-align: right;
+}
+
+[dir="rtl"] .compact-view .hours-display {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .compact-view .zone-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .compact-view .zone-details {
+    text-align: right;
+}
+
+[dir="rtl"] .compact-view .zone-price-section,
+[dir="rtl"] .compact-view .zone-time-section {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .compact-view .quick-actions {
+    flex-direction: column;
+}
+
+[dir="rtl"] .compact-view .action-btn {
+    flex-direction: row-reverse;
+}
+
+/* RTL Final Improvements */
+[dir="rtl"] .restaurant-card::before {
+    background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+}
+
+[dir="rtl"] .delivery-zone-card::before {
+    background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+}
+
+[dir="rtl"] .zone-number {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .restaurant-status-modal {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .cuisine-badge {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .restaurant-cuisine-badge {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .card-header h3 {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .zone-name {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .price-label,
+[dir="rtl"] .time-label {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .price-value,
+[dir="rtl"] .time-value {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .contact-label {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .contact-value {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .info-label {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .info-value {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* RTL Modal Improvements */
+[dir="rtl"] .modal-content {
+    direction: rtl;
+}
+
+[dir="rtl"] .modal-header {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .modal-header h3 {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .modal-close {
+    order: -1;
+}
+
+[dir="rtl"] .modal-body {
+    text-align: right;
+}
+
+[dir="rtl"] .modal-footer {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .modal-footer .btn {
+    flex-direction: row-reverse;
+}
+
+/* RTL Restaurant Details Enhanced */
+[dir="rtl"] .restaurant-details-enhanced {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .restaurant-header-modal {
+    text-align: center;
+    direction: rtl;
+}
+
+[dir="rtl"] .restaurant-title-section {
+    text-align: center;
+}
+
+[dir="rtl"] .restaurant-name-modal {
+    text-align: center;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .restaurant-status-modal {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .restaurant-cuisine-badge {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* RTL Info Cards */
+[dir="rtl"] .info-card {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .card-header {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .card-header h3 {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .card-content {
+    text-align: right;
+}
+
+/* RTL Contact Information */
+[dir="rtl"] .contact-item {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .contact-icon {
+    order: 1;
+}
+
+[dir="rtl"] .contact-details {
+    order: 0;
+    text-align: right;
+}
+
+[dir="rtl"] .contact-label {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .contact-value {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* RTL Hours Display */
+[dir="rtl"] .hours-display {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .hours-display span {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* RTL Delivery Zones */
+[dir="rtl"] .delivery-zones-card {
+    direction: rtl;
+}
+
+[dir="rtl"] .delivery-zones-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .delivery-zone-card {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .zone-header {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .zone-number {
+    order: 1;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .zone-name {
+    order: 0;
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .zone-details {
+    text-align: right;
+}
+
+[dir="rtl"] .zone-price-section {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .zone-time-section {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .price-label {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .price-value {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .time-label {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] .time-value {
+    text-align: right;
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* RTL Quick Actions */
+[dir="rtl"] .quick-actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .action-btn {
+    flex-direction: row-reverse;
+    text-align: center;
+}
+
+[dir="rtl"] .action-btn span {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+}
+
+/* RTL Additional Modal Improvements */
+[dir="rtl"] .modal {
+    direction: rtl;
+}
+
+[dir="rtl"] .modal-content {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .modal-header {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .modal-body {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .modal-footer {
+    direction: rtl;
+}
+
+[dir="rtl"] .restaurant-details-enhanced {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .info-card {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .delivery-zones-card {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .delivery-zones-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .delivery-zone-card {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .quick-actions {
+    direction: rtl;
+}
+
+[dir="rtl"] .action-btn {
+    direction: rtl;
+    text-align: center;
+}
+
+/* RTL Form Improvements */
+[dir="rtl"] .form-group {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .form-group label {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .form-group input,
+[dir="rtl"] .form-group select {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .zone-input-group {
+    direction: rtl;
+}
+
+[dir="rtl"] .zone-input-group input {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .remove-zone-btn {
+    direction: rtl;
+}
+
+/* RTL Search Improvements */
+[dir="rtl"] .search-container {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .search-input-container {
+    direction: rtl;
+}
+
+[dir="rtl"] .search-input-container input {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .search-results {
+    direction: rtl;
+}
+
+[dir="rtl"] .search-result-item {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .result-header {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .result-details {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .zone-info {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .delivery-time,
+[dir="rtl"] .contact-info {
+    direction: rtl;
+    text-align: right;
+}
+
+/* RTL Settings Improvements */
+[dir="rtl"] .settings-container {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .setting-group {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .setting-group h3 {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .setting-item {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .setting-item label {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .setting-item input[type="text"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .setting-item input[type="checkbox"] {
+    direction: rtl;
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered Animation for Cards */
+.restaurant-card:nth-child(1) { animation-delay: 0.1s; }
+.restaurant-card:nth-child(2) { animation-delay: 0.2s; }
+.restaurant-card:nth-child(3) { animation-delay: 0.3s; }
+.restaurant-card:nth-child(4) { animation-delay: 0.4s; }
+.restaurant-card:nth-child(5) { animation-delay: 0.5s; }
+.restaurant-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Pulse Animation for Status */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.restaurant-status.status-open {
+    animation: pulse 2s infinite;
+}
+
+/* Hover Effects */
+.restaurant-card:hover .restaurant-card-header {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.restaurant-card:hover .view-details-btn {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+/* Delivery Zones Form Styles */
+.zone-input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+
+.zone-input-group input {
+    padding: 0.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.zone-input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.remove-zone-btn {
+    background: #f56565;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+
+.remove-zone-btn:hover {
+    background: #e53e3e;
+    transform: scale(1.05);
+}
+
+#addZoneBtn {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .zone-input-group {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .zone-input-group input {
+        width: 100%;
+    }
+    
+    .remove-zone-btn {
+        justify-self: start;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Enhanced Restaurant Details Modal Styles */
+.restaurant-details-enhanced {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.restaurant-header-modal {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.restaurant-title-section {
+    margin-bottom: 1rem;
+}
+
+.restaurant-name-modal {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: white;
+}
+
+.restaurant-status-modal {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.restaurant-status-modal.status-open {
+    background: rgba(72, 187, 120, 0.2);
+    color: #c6f6d5;
+    border: 2px solid rgba(72, 187, 120, 0.3);
+}
+
+.restaurant-status-modal.status-closed {
+    background: rgba(245, 101, 101, 0.2);
+    color: #fed7d7;
+    border: 2px solid rgba(245, 101, 101, 0.3);
+}
+
+.restaurant-cuisine-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Info Cards */
+.info-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.card-header i {
+    color: #667eea;
+    font-size: 1.25rem;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+/* Contact Information Styles */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.contact-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-label {
+    font-size: 0.875rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.contact-value {
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Hours Display */
+.hours-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+    border-radius: 12px;
+    border: 2px solid #9ae6b4;
+}
+
+.hours-display i {
+    color: #22543d;
+    font-size: 1.5rem;
+}
+
+.hours-display span {
+    color: #22543d;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Delivery Zones Grid */
+.delivery-zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.delivery-zone-card {
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+    border: 2px solid #feb2b2;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.delivery-zone-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(245, 101, 101, 0.2);
+    border-color: #fc8181;
+}
+
+.delivery-zone-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.zone-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.zone-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.zone-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+}
+
+.zone-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.zone-price-section,
+.zone-time-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.zone-price-section i,
+.zone-time-section i {
+    color: #667eea;
+    font-size: 1.1rem;
+}
+
+.price-label,
+.time-label {
+    font-size: 0.9rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.price-value,
+.time-value {
+    font-size: 1rem;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.call-btn {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+}
+
+.call-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+.copy-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.copy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Mobile Responsive for Enhanced Modal */
+@media (max-width: 768px) {
+    .restaurant-header-modal {
+        padding: 1.5rem;
+    }
+    
+    .restaurant-name-modal {
+        font-size: 1.5rem;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .delivery-zones-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .delivery-zone-card {
+        padding: 1rem;
+    }
+    
+    .zone-header {
+        gap: 0.75rem;
+    }
+    
+    .zone-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .zone-name {
+        font-size: 1.1rem;
+    }
+    
+    .quick-actions {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .contact-item {
+        padding: 0.75rem 0;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
