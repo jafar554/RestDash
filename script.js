@@ -3,8 +3,6 @@ class RestaurantDashboard {
     constructor() {
         this.restaurants = [];
         this.currentSection = 'restaurants';
-        this.isAdmin = false;
-        this.adminPassword = CONFIG.ADMIN.PASSWORD;
         
         this.init();
     }
@@ -13,8 +11,6 @@ class RestaurantDashboard {
         this.setupEventListeners();
         this.loadSettings();
         this.loadRestaurantsFromStorage();
-        this.checkAdminMode();
-        this.updateUIForUserMode();
     }
 
     setupEventListeners() {
@@ -33,11 +29,6 @@ class RestaurantDashboard {
         // Modal close button
         document.getElementById('closeModal').addEventListener('click', () => {
             this.closeModal();
-        });
-
-        // Admin login button
-        document.getElementById('adminLoginBtn').addEventListener('click', () => {
-            this.toggleAdminMode();
         });
 
         // Search input
@@ -85,46 +76,6 @@ class RestaurantDashboard {
             this.renderRestaurants();
         } else if (section === 'search') {
             this.clearSearchResults();
-        }
-    }
-
-    checkAdminMode() {
-        const savedAdminMode = localStorage.getItem(CONFIG.STORAGE.ADMIN_KEY);
-        if (savedAdminMode === 'true') {
-            this.isAdmin = true;
-        }
-    }
-
-    toggleAdminMode() {
-        if (this.isAdmin) {
-            this.isAdmin = false;
-            localStorage.removeItem(CONFIG.STORAGE.ADMIN_KEY);
-            this.showToast('تم تسجيل الخروج من وضع المدير', 'info');
-        } else {
-            const password = prompt('أدخل كلمة مرور المدير:');
-            if (password === this.adminPassword) {
-                this.isAdmin = true;
-                localStorage.setItem(CONFIG.STORAGE.ADMIN_KEY, 'true');
-                this.showToast('تم تسجيل الدخول كمدير', 'success');
-            } else if (password !== null) {
-                this.showToast('كلمة المرور غير صحيحة', 'error');
-            }
-        }
-        this.updateUIForUserMode();
-    }
-
-    updateUIForUserMode() {
-        const addButton = document.getElementById('addRestaurantBtn');
-        const adminButton = document.getElementById('adminLoginBtn');
-        
-        if (this.isAdmin) {
-            addButton.style.display = 'inline-flex';
-            adminButton.innerHTML = '<i class="fas fa-sign-out-alt"></i> تسجيل الخروج';
-            adminButton.className = 'btn btn-secondary';
-        } else {
-            addButton.style.display = 'none';
-            adminButton.innerHTML = '<i class="fas fa-user-shield"></i> تسجيل دخول المدير';
-            adminButton.className = 'btn btn-primary';
         }
     }
 

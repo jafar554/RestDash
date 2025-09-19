@@ -2,22 +2,7 @@
 // Update these settings to customize your dashboard
 
 const CONFIG = {
-        // Admin Configuration
-        ADMIN: {
-            // Change this password to secure your admin access
-            // IMPORTANT: Change this password before deployment!
-            PASSWORD: 'admin123',
-            
-            // Session timeout in minutes (0 = no timeout)
-            SESSION_TIMEOUT: 0,
-            
-            // Admin features
-            CAN_ADD_RESTAURANTS: true,
-            CAN_EDIT_RESTAURANTS: true,
-            CAN_DELETE_RESTAURANTS: false,
-            CAN_VIEW_SETTINGS: true
-        },
-    
+
     // Dashboard Settings
     DASHBOARD: {
         // Default settings
