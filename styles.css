@@ -706,57 +706,6 @@ body {
     border-color: #667eea;
 }
 
-/* Settings Section */
-.settings-container {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.setting-group {
-    margin-bottom: 2rem;
-}
-
-.setting-group h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 1rem;
-}
-
-.setting-item {
-    margin-bottom: 1rem;
-}
-
-.setting-item label {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #4a5568;
-    margin-bottom: 0.5rem;
-}
-
-.setting-item input[type="text"] {
-    width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    transition: all 0.2s ease;
-}
-
-.setting-item input[type="text"]:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.setting-item input[type="checkbox"] {
-    margin-right: 0.5rem;
-}
-
 /* Modal Styles */
 .modal {
     display: none;

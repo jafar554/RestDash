@@ -18,13 +18,6 @@ class RestaurantDashboard {
     }
 
     setupEventListeners() {
-        // Navigation buttons
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const section = e.currentTarget.dataset.section;
-                this.switchSection(section);
-            });
-        });
 
         // Refresh button
         document.getElementById('refreshBtn').addEventListener('click', () => {
@@ -674,47 +667,6 @@ class RestaurantDashboard {
         `;
     }
 
-
-
-
-    toggleCompactView(enabled) {
-        const body = document.body;
-        if (enabled) {
-            body.classList.add('compact-view');
-        } else {
-            body.classList.remove('compact-view');
-        }
-        this.saveSettings();
-    }
-
-    toggleDeliveryPrices(enabled) {
-        // This would hide/show delivery prices in the UI
-        const showPrices = enabled;
-        this.saveSettings();
-    }
-
-    loadSettings() {
-        const settings = JSON.parse(localStorage.getItem(CONFIG.STORAGE.SETTINGS_KEY) || '{}');
-        
-        if (settings.compactView !== undefined) {
-            document.getElementById('compactView').checked = settings.compactView;
-            this.toggleCompactView(settings.compactView);
-        }
-        if (settings.showDeliveryPrices !== undefined) {
-            document.getElementById('showDeliveryPrices').checked = settings.showDeliveryPrices;
-        }
-        
-        this.updateSystemInfo();
-    }
-
-    saveSettings() {
-        const settings = {
-            compactView: document.getElementById('compactView').checked,
-            showDeliveryPrices: document.getElementById('showDeliveryPrices').checked
-        };
-        
-        localStorage.setItem(CONFIG.STORAGE.SETTINGS_KEY, JSON.stringify(settings));
-    }
 
     showLoading(show) {
         const overlay = document.getElementById('loadingOverlay');
